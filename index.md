@@ -21,9 +21,10 @@ using InteractiveUtils
 # Resources
 
 - https://julialang.org
-- https://discourse.julialang.org
-- http://julialang.slack.com/
-- https://docs.julialang.org/en/
+- https://juliaobserver.com/ (finding packages)
+- https://discourse.julialang.org (ask for help)
+- http://julialang.slack.com/ (ask for help)
+- https://docs.julialang.org/en/ (documentation)
 
 ---
 
@@ -154,3 +155,19 @@ to R, which has `rgamma`, `dgamma`, `pgamma`, etc.
 
 In Julia, I know anything Distribution type will have a variety of methods available
 rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
+
+
+# How do I do X in Julia?
+
+1. `?X`
+2. Official docs
+3. Discourse/Slack
+4. Google
+
+# How should I write code?
+
+- Jupyter
+    - For reproducibility and sharing code with others
+    - **NOT** your main work environment
+- Atom and VS Code have good Julia plug-ins (I use VS Code)
+- Julia Pro (Atom with Juno plug-in preinstalled)
