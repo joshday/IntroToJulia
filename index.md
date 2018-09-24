@@ -83,6 +83,25 @@
 
 # Basics
 
+### The REPL
+
+Your first experience with Julia will probably be via the REPL (read-eval-print-loop)
+
+```julia
+julia> x = 1
+1
+
+julia> y = 2
+2
+```
+
+There are several **REPL Modes** that can be activated by certain characters:
+
+- `?` (help)
+- `]` (package manager)
+- `;` (shell)
+- `$` (R via [RCall.jl](https://github.com/JuliaInterop/RCall.jl))
+
 ### Things have types
 
 ```julia
@@ -123,4 +142,14 @@ f(x) = x ^ 2
 #   %1 = mul i64 %0, %0
 #   ret i64 %1
 # }
+```
+
+### Using Packages
+
+```julia
+using Distributions
+
+g = Gamma(5, 1)
+
+rand(g, 3)
 ```
