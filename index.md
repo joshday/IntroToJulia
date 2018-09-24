@@ -50,3 +50,77 @@
 ### Julia is more than just "Fast R" or "Fast Matlab"
 - Performance comes from features that work well together.  
 - You can't just take the magic dust that makes Julia fast and sprinkle it on [language of choice]
+
+---
+
+# Julia Features
+
+- Type system
+- Multiple dispatch
+- Type Inference
+- Metaprogramming (macros)
+- Just-in-time (JIT) compilation using LLVM
+- Clean, familiar syntax
+
+---
+
+# Benchmarks, Time Relative to C
+
+![](https://julialang.org/images/benchmarks.svg)
+
+---
+
+# Julia's Growth
+
+- http://pkg.julialang.org/pulse.html
+
+![](http://pkg.julialang.org/img/allver.svg)
+
+![](http://pkg.julialang.org/img/stars.svg)
+
+
+---
+
+# Basics
+
+### Things have types
+
+```julia
+typeof(1)       # Int
+typeof(1.0)     # Float64
+typeof([1, 2])  # Vector{Int}
+```
+
+### Code blocks use `end`
+
+```julia
+function f(x)
+    x + 1
+end
+```
+
+```julia
+for i in 1:5
+    println(i)
+end
+```
+
+### Julia does many optimizations for you
+
+```julia
+f(x) = x ^ 2
+
+@code_llvm f(1)
+# define double @julia_f_62869(double) #0 !dbg !5 {
+# top:
+#   %1 = fmul double %0, %0
+#   ret double %1
+# }
+
+@code_llvm f(1.0)
+# define i64 @julia_f_62877(i64) #0 !dbg !5 {
+# top:
+#   %1 = mul i64 %0, %0
+#   ret i64 %1
+# }
+```
