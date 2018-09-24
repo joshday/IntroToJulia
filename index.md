@@ -149,4 +149,8 @@ rand(g, 3)
 mean(g), var(g), mode(g), pdf(g, 5)
 ```
 
-**Note**: Multiple dispatch allows packages to be based around an "interface".
+**Note**: Multiple dispatch allows packages to be based around an "interface".  Compare this
+to R, which has `rgamma`, `dgamma`, `pgamma`, etc.
+
+In Julia, I know anything Distribution type will have a variety of methods available
+rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
