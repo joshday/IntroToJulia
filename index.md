@@ -1,5 +1,13 @@
 ![](https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/7/c/8/0/highres_328291872.jpeg)
 
+
+```julia;hide;
+using Pkg
+pkg"add Plots"
+pkg"add Distributions"
+pkg"add OnlineStats"
+```
+
 # Introduction to Julia
 
 ## Josh Day
@@ -87,12 +95,10 @@
 
 Your first experience with Julia will probably be via the REPL (read-eval-print-loop)
 
-```julia
-julia> x = 1
-1
+```julia; repl;
+x = 1
 
-julia> y = 2
-2
+y = 2
 ```
 
 There are several **REPL Modes** that can be activated by certain characters:
@@ -126,30 +132,16 @@ end
 
 ### Julia does many optimizations for you
 
-```julia
+```julia; repl;
 f(x) = x ^ 2
-
 @code_llvm f(1)
-# define double @julia_f_62869(double) #0 !dbg !5 {
-# top:
-#   %1 = fmul double %0, %0
-#   ret double %1
-# }
-
 @code_llvm f(1.0)
-# define i64 @julia_f_62877(i64) #0 !dbg !5 {
-# top:
-#   %1 = mul i64 %0, %0
-#   ret i64 %1
-# }
 ```
 
 ### Using Packages
 
 ```julia
 using Distributions
-
 g = Gamma(5, 1)
-
 rand(g, 3)
 ```
