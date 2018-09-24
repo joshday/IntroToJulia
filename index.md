@@ -21,7 +21,9 @@ using InteractiveUtils
 # Resources
 
 - https://julialang.org
-- 
+- https://discourse.julialang.org
+- http://julialang.slack.com/
+- https://docs.julialang.org/en/
 
 ---
 
