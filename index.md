@@ -6,6 +6,7 @@ using Pkg
 pkg"add Plots"
 pkg"add Distributions"
 pkg"add OnlineStats"
+using InteractiveUtils
 ```
 
 # Introduction to Julia
