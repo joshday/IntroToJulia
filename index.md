@@ -18,6 +18,13 @@ using InteractiveUtils
 
 ---
 
+# Resources
+
+- https://julialang.org
+- 
+
+---
+
 # Sapir-Worf Hypothesis
 - **Your language influences how you think.**
 - In programming, your language influences how you solve problems.
@@ -111,10 +118,10 @@ There are several **REPL Modes** that can be activated by certain characters:
 
 ### Things have types
 
-```julia
-typeof(1)       # Int
-typeof(1.0)     # Float64
-typeof([1, 2])  # Vector{Int}
+```julia; repl;
+typeof(1)
+typeof(1.0) 
+typeof([1, 2])
 ```
 
 ### Code blocks use `end`
@@ -131,18 +138,13 @@ for i in 1:5
 end
 ```
 
-### Julia does many optimizations for you
-
-```julia; repl;
-f(x) = x ^ 2
-@code_llvm f(1)
-@code_llvm f(1.0)
-```
-
 ### Using Packages
 
-```julia
+```julia; repl;
 using Distributions
 g = Gamma(5, 1)
 rand(g, 3)
+mean(g), var(g), mode(g), pdf(g, 5)
 ```
+
+**Note**: Multiple dispatch allows packages to be based around an "interface".
