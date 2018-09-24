@@ -8,6 +8,7 @@ notifications:
 script:
   - julia -e 'import Pkg; Pkg.clone("https://github.com/joshday/Reproducible.jl")'
   - julia -e 'using Reproducible; Reproducible.build("index.md")'
+  - echo "theme: minima" >> config.yml
 deploy:
   provider: pages
   skip-cleanup: true
