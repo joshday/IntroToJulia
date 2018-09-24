@@ -1,0 +1,18 @@
+language: julia
+os:
+  - linux
+julia:
+  - 1.0
+notifications:
+  email: true
+script:
+  - julia -e 'import Pkg; Pkg.clone("https://github.com/joshday/Reproducible.jl")'
+  - julia -e 'using Reproducible; Reproducible.build("index.md")'
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: build
+  on:
+    branch: master
