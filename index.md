@@ -16,8 +16,6 @@ using InteractiveUtils
 - GitHub: `@joshday`
 - Email: emailjoshday@gmail.com
 
----
-
 # Resources
 
 - [https://julialang.org](https://julialang.org)
@@ -26,13 +24,9 @@ using InteractiveUtils
 - [http://julialang.slack.com/](http://julialang.slack.com/) (ask for help)
 - [https://docs.julialang.org/en/](https://docs.julialang.org/en/) (documentation)
 
----
-
 # Sapir-Worf Hypothesis
 - **Your language influences how you think.**
 - In programming, your language influences how you solve problems.
-
----
 
 # Why do we need another language?
 
@@ -55,8 +49,6 @@ using InteractiveUtils
 - Was fast (avoids two language problem)
 - Had clear syntax (Easy to read and write)
 
----
-
 # What is Julia?
 > Julia is a high-level, high-performance dynamic programming language for technical computing, with syntax that is familiar to users of other technical computing environments
 
@@ -70,8 +62,6 @@ using InteractiveUtils
 - Performance comes from features that work well together.  
 - You can't just take the magic dust that makes Julia fast and sprinkle it on [language of choice]
 
----
-
 # Julia Features
 
 - Type system
@@ -81,13 +71,13 @@ using InteractiveUtils
 - Just-in-time (JIT) compilation using LLVM
 - Clean, familiar syntax
 
----
+## Multiple Dispatch is the Best Thing
+
+- Multiple dispatch
 
 # Benchmarks, Time Relative to C
 
 ![](https://julialang.org/images/benchmarks.svg)
-
----
 
 # Julia's Growth
 
@@ -97,8 +87,6 @@ using InteractiveUtils
 
 ![](http://pkg.julialang.org/img/stars.svg)
 
-
----
 
 # Basics
 
@@ -174,12 +162,40 @@ rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
 
 # Reading and Writing
 
-Start with `?read` and `?write`
-
+- Delimited Files
+  
 ```julia;repl
+using DelimitedFiles
+
 x = randn(10)
 
 writecsv("temp.csv", x)
 
 y = readcsv("temp.csv")
+```
+
+- (De)serialization
+
+```julia;repl;
+using Serialization
+
+x = randn(10)
+
+open(touch("temp")) do io
+    serialize(io, x)
+end
+
+y = open(deserialize, "temp", "r")
+```
+
+
+# Linear Algebra
+
+- 1-based indexing
+
+```julia;repl;
+x = rand(3, 3)
+x[1]
+x[end-1]
+x * rand(3)
 ```
