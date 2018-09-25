@@ -7,7 +7,7 @@ notifications:
   email: true
 script:
   - julia -e 'import Pkg; Pkg.clone("https://github.com/joshday/Reproducible.jl")'
-  - julia -e 'using Reproducible; Reproducible.build("index.md")'
+  - julia -e 'using Reproducible; Reproducible.build("index.md"; toc=true)'
 deploy:
   provider: pages
   skip-cleanup: true

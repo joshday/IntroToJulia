@@ -167,7 +167,19 @@ rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
 # How should I write code?
 
 - Jupyter
-    - For reproducibility and sharing code with others
+    - For reproducibility (see also [Weave.jl](https://github.com/mpastell/Weave.jl) and [Literate.jl](https://github.com/fredrikekre/Literate.jl)), sharing code with others, and working with data on a server.
     - **NOT** your main work environment
 - Atom and VS Code have good Julia plug-ins (I use VS Code)
-- Julia Pro (Atom with Juno plug-in preinstalled)
+- Julia Pro (Atom with the Juno plug-in preinstalled)
+
+# Reading and Writing
+
+Start with `?read` and `?write`
+
+```julia;repl
+x = randn(10)
+
+writecsv("temp.csv", x)
+
+y = readcsv("temp.csv")
+```
