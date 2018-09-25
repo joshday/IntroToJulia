@@ -166,25 +166,19 @@ rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
   
 ```julia;repl
 using DelimitedFiles
-
 x = randn(10)
-
-writecsv("temp.csv", x)
-
-y = readcsv("temp.csv")
+writedlm("temp.csv", x, ',')
+y = readdlm("temp.csv")
 ```
 
 - (De)serialization
 
 ```julia;repl;
 using Serialization
-
 x = randn(10)
-
 open(touch("temp")) do io
     serialize(io, x)
 end
-
 y = open(deserialize, "temp", "r")
 ```
 
