@@ -139,6 +139,14 @@ typeof(1.0)
 typeof([1, 2])
 ```
 
+### You can use unicode characters
+
+Try typing `\alpha` or `\:+1:` and hit tab.
+
+```julia;repl;
+👍 = "thumbs up!"
+```
+
 ### Code blocks use `end`
 
 ```julia
@@ -168,8 +176,6 @@ mean(g), var(g), mode(g), pdf(g, 5)
 module Thing
 myfun(x) = "hello"
 end
-
-myfun # error!  Where should julia look for myfun?
 
 Thing.myfun(1)
 ```
@@ -264,3 +270,11 @@ subtypes(Number)
 Int <: Number
 ```
 
+# Multiple Dispatch
+
+# Plotting
+
+# Using R or Python with Julia
+
+
+# Gotchas
