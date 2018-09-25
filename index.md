@@ -1,4 +1,4 @@
-![](https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/7/c/8/0/highres_328291872.jpeg)
+![](https://github.com/JuliaGraphics/julia-logo-graphics/blob/master/images/julia-logo-325-by-225.png?raw=true)
 
 
 ```julia;hide;
@@ -105,11 +105,11 @@ cdf(d2, 1)
 
 ## Julia's Growth
 
-- http://pkg.julialang.org/pulse.html
+- [https://pkg.julialang.org/pulse.html](https://pkg.julialang.org/pulse.html)
 
-![](http://pkg.julialang.org/img/allver.svg)
+![](https://pkg.julialang.org/img/allver.svg)
 
-![](http://pkg.julialang.org/img/stars.svg)
+![](https://pkg.julialang.org/img/stars.svg)
 
 
 # Basics
@@ -235,9 +235,9 @@ Why does this need to be a macro?
 ```
 
 - **Super useful macros**
-    - `@time`
-    - `@edit`
-    - `@which`
+    - `@time` (time and allocations)
+    - `@edit` (open up source code)
+    - `@which` (find the method being called)
     - `@benchmark` (from [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl))
 
 ```julia;repl;
