@@ -74,9 +74,9 @@ using InteractiveUtils
 - Just-in-time (JIT) compilation using LLVM
 - Clean, familiar syntax
 
-## Multiple Dispatch and How to Utilize it
+## Multiple Dispatch
 
-- Multiple dispatch is the idea that a function calls a different *method* depending on the types of the arguments.
+- Multiple dispatch is the idea that a function calls a different *method* depending on the types of the arguments (more on this later).
 
 ```julia; repl;
 f(x::Int) = 1
@@ -224,4 +224,16 @@ x[1]
 x[end-1]
 x * rand(3)
 rand(2, 2, 2)  # high-dimensional arrays
+```
+
+# Type System
+
+- When thinking about types in Julia, think about sets.
+- Explore the type hierarchy with `supertype`, `subtypes`, `typeof`, `<:`
+
+```julia; repl;
+typeof(1)
+supertype(Int)
+subtypes(Number)
+Int <: Number
 ```
