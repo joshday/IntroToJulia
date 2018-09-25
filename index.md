@@ -74,7 +74,7 @@ using InteractiveUtils
 - Just-in-time (JIT) compilation using LLVM
 - Clean, familiar syntax
 
-## Multiple Dispatch is the Best Thing
+## Multiple Dispatch and How to Utilize it
 
 - Multiple dispatch is the idea that a function calls a different *method* depending on the types of the arguments.
 
@@ -83,6 +83,20 @@ f(x::Int) = 1
 f(x::Float64) = 2
 f(0)
 f(0.0)
+```
+
+Julia packages are typically based around a grammar or interface of how to talk about some thing. 
+
+Consider the [Distributions.jl](https://github.com/JuliaStats/Distributions.jl) package.  What is the grammar of how one talks about a probability distribution?
+
+```julia; repl;
+using Distributions
+d1 = Normal(0.0, 1.0)
+d2 = Beta(3.0, 5.0)
+mean(d1)
+mean(d2)
+cdf(d1, 1)
+cdf(d2, 1)
 ```
 
 ## Benchmarks, Time Relative to C
@@ -170,7 +184,7 @@ rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
 - Atom and VS Code have good Julia plug-ins (I use VS Code)
 - Julia Pro (Atom with the Juno plug-in preinstalled)
 
-# Reading and Writing
+## Reading and Writing
 
 - Delimited Files
   
@@ -200,7 +214,7 @@ y = open(deserialize, "temp", "r")
 ```
 
 
-# Linear Algebra
+## Linear Algebra
 
 - 1-based indexing
 
@@ -209,4 +223,5 @@ x = rand(3, 3)
 x[1]
 x[end-1]
 x * rand(3)
+rand(2, 2, 2)  # high-dimensional arrays
 ```
