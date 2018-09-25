@@ -153,7 +153,7 @@ for i in 1:5
 end
 ```
 
-### Using Packages
+## Using Packages
 
 ```julia; repl;
 using Distributions
@@ -162,11 +162,17 @@ rand(g, 3)
 mean(g), var(g), mode(g), pdf(g, 5)
 ```
 
-**Note**: Multiple dispatch allows packages to be based around an "interface".  Compare this
-to R, which has `rgamma`, `dgamma`, `pgamma`, etc.
+### Packages are modules
 
-In Julia, I know anything Distribution type will have a variety of methods available
-rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
+```julia; repl;
+module Thing
+myfun(x) = "hello"
+end
+
+myfun # error!  Where should julia look for myfun?
+
+Thing.myfun(1)
+```
 
 
 ## How do I do X in Julia?
