@@ -6,17 +6,20 @@ using Pkg
 pkg"add Plots"
 pkg"add Distributions"
 pkg"add OnlineStats"
+pkg"add CSV"
 using InteractiveUtils
 ```
 
-# Introduction to Julia
+### Introduction to Julia
 
-## Dr. Josh Day
+#### Dr. Josh Day
 
 - GitHub: `@joshday`
 - Email: emailjoshday@gmail.com
 
-# Resources
+# Intro
+
+## Resources
 
 - [https://julialang.org](https://julialang.org)
 - [https://juliaobserver.com/](https://juliaobserver.com/) (finding packages)
@@ -24,11 +27,11 @@ using InteractiveUtils
 - [http://julialang.slack.com/](http://julialang.slack.com/) (ask for help)
 - [https://docs.julialang.org/en/](https://docs.julialang.org/en/) (documentation)
 
-# Sapir-Worf Hypothesis
+## Sapir-Worf Hypothesis
 - **Your language influences how you think.**
 - In programming, your language influences how you solve problems.
 
-# Why do we need another language?
+## Why do we need another language?
 
 - R is great for statistics
 - Matlab is great for computational linear algebra
@@ -49,7 +52,7 @@ using InteractiveUtils
 - Was fast (avoids two language problem)
 - Had clear syntax (Easy to read and write)
 
-# What is Julia?
+## What is Julia?
 > Julia is a high-level, high-performance dynamic programming language for technical computing, with syntax that is familiar to users of other technical computing environments
 
 ### Aims to solve the "two language problem"
@@ -62,7 +65,7 @@ using InteractiveUtils
 - Performance comes from features that work well together.  
 - You can't just take the magic dust that makes Julia fast and sprinkle it on [language of choice]
 
-# Julia Features
+## Julia Features
 
 - Type system
 - Multiple dispatch
@@ -73,13 +76,20 @@ using InteractiveUtils
 
 ## Multiple Dispatch is the Best Thing
 
-- Multiple dispatch
+- Multiple dispatch is the idea that a function calls a different *method* depending on the types of the arguments.
 
-# Benchmarks, Time Relative to C
+```julia; repl;
+f(x::Int) = 1
+f(x::Float64) = 2
+f(0)
+f(0.0)
+```
+
+## Benchmarks, Time Relative to C
 
 ![](https://julialang.org/images/benchmarks.svg)
 
-# Julia's Growth
+## Julia's Growth
 
 - http://pkg.julialang.org/pulse.html
 
@@ -145,14 +155,14 @@ In Julia, I know anything Distribution type will have a variety of methods avail
 rand(Normal()), pdf(Normal(), x), cdf(Normal(), x
 
 
-# How do I do X in Julia?
+## How do I do X in Julia?
 
 1. `?X`
 2. Official docs
 3. Discourse/Slack
 4. Google
 
-# How should I write code?
+## How should I write code?
 
 - Jupyter
     - For reproducibility (see also [Weave.jl](https://github.com/mpastell/Weave.jl) and [Literate.jl](https://github.com/fredrikekre/Literate.jl)), sharing code with others, and working with data on a server.
@@ -169,6 +179,13 @@ using DelimitedFiles
 x = randn(10)
 writedlm("temp.csv", x, ',')
 y = readdlm("temp.csv")
+```
+
+- Delimited files -> read into a DataFrame
+  
+```julia;repl
+using CSV
+CSV.read("temp.csv")
 ```
 
 - (De)serialization
