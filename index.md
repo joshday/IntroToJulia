@@ -176,7 +176,7 @@ y = readdlm("temp.csv")
 ```julia;repl;
 using Serialization
 x = randn(10)
-open(touch("temp")) do io
+open(touch("temp"), "w") do io
     serialize(io, x)
 end
 y = open(deserialize, "temp", "r")
