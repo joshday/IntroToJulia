@@ -226,9 +226,29 @@ x * rand(3)
 rand(2, 2, 2)  # high-dimensional arrays
 ```
 
+## Macros (functions of expressions)
+
+Why does this need to be a macro?
+
+```julia;repl;
+@show x = 1
+```
+
+- **Super useful macros**
+    - `@time`
+    - `@edit`
+    - `@which`
+    - `@benchmark` (from [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl))
+
+```julia;repl;
+@time for i in 1:10
+    sleep(.1)
+end
+```
+
 # Type System
 
-- When thinking about types in Julia, think about sets.
+- **When thinking about types in Julia, think about sets.**
 - Explore the type hierarchy with `supertype`, `subtypes`, `typeof`, `<:`
 
 ```julia; repl;
@@ -237,3 +257,4 @@ supertype(Int)
 subtypes(Number)
 Int <: Number
 ```
+
