@@ -7,6 +7,7 @@ pkg"add Plots"
 pkg"add Distributions"
 pkg"add OnlineStats"
 pkg"add CSV"
+pkg"add AverageShiftedHistograms"
 using InteractiveUtils
 ```
 
@@ -175,7 +176,7 @@ mean(g), var(g), mode(g), pdf(g, 5)
 ```julia; repl;
 module Thing
 myfun(x) = "hello"
-end
+end;
 
 Thing.myfun(1)
 ```
@@ -211,7 +212,7 @@ y = readdlm("temp.csv")
   
 ```julia;repl
 using CSV
-CSV.read("temp.csv")
+CSV.read("temp.csv", allowmissing = :none)
 ```
 
 - (De)serialization
@@ -282,7 +283,7 @@ Int <: Number
 ```julia;repl;
 using Plots
 p = plot(randn(20, 2), seriestype = [:line :scatter]);
-png(p, "myplot.png")
+png(p, "build/myplot.png")
 ```
 
 ![](myplot.png)
