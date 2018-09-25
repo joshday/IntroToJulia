@@ -274,6 +274,19 @@ Int <: Number
 
 # Plotting
 
+- No built in plotting package
+- [Plots.jl](https://github.com/JuliaPlots/Plots.jl)
+    - Interface around multiple plotting "backends"
+- [Makie.jl](https://github.com/JuliaPlots/Makie.jl)
+
+```julia;repl;
+using Plots
+p = plot(randn(20, 2), seriestype = [:line :scatter]);
+png(p, "myplot.png")
+```
+
+![](myplot.png)
+
 # Using R or Python with Julia
 
 
