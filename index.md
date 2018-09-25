@@ -11,7 +11,7 @@ using InteractiveUtils
 
 # Introduction to Julia
 
-## Josh Day
+## Dr. Josh Day
 
 - GitHub: `@joshday`
 - Email: emailjoshday@gmail.com
@@ -20,11 +20,11 @@ using InteractiveUtils
 
 # Resources
 
-- https://julialang.org
-- https://juliaobserver.com/ (finding packages)
-- https://discourse.julialang.org (ask for help)
-- http://julialang.slack.com/ (ask for help)
-- https://docs.julialang.org/en/ (documentation)
+- [https://julialang.org](https://julialang.org)
+- [https://juliaobserver.com/](https://juliaobserver.com/) (finding packages)
+- [https://discourse.julialang.org](https://discourse.julialang.org) (ask for help)
+- [http://julialang.slack.com/](http://julialang.slack.com/) (ask for help)
+- [https://docs.julialang.org/en/](https://docs.julialang.org/en/) (documentation)
 
 ---
 
@@ -51,7 +51,7 @@ using InteractiveUtils
 
 ### Wouldn't it be great if we had a language which...
 - Was open source
-- Had an active community (621 contributors to base Julia)
+- Had an active community (743 contributors to base Julia as of Sep 25, 2018)
 - Was fast (avoids two language problem)
 - Had clear syntax (Easy to read and write)
 
