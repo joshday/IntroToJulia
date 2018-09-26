@@ -11,7 +11,7 @@ using InteractiveUtils
 ```
 
 ### Introduction to Julia
-\n\n\n\n\n\n\n
+
 #### Dr. Josh Day
 
 - GitHub: `@joshday`
@@ -22,6 +22,7 @@ using InteractiveUtils
 ## Resources
 
 - [https://julialang.org](https://julialang.org)
+- [https://juliabox.com](https://juliabox.com) (run Julia on the cloud, free tutorials)
 - [https://juliaobserver.com/](https://juliaobserver.com/) (finding packages)
 - [https://discourse.julialang.org](https://discourse.julialang.org) (ask for help)
 - [http://julialang.slack.com/](http://julialang.slack.com/) (ask for help)
@@ -332,6 +333,21 @@ myquantile(Beta(2, 4), .1)
 using Plots
 p = plot(randn(20, 2), seriestype = [:line :scatter]);
 png(p, "build/myplot.png")
+```
+
+## Plot Recipes
+
+```julia; run;
+using RecipesBase
+
+struct Thing 
+    n::Int 
+end
+
+@recipe function f(o::Thing) 
+    title --> "This is a plot of Thing"
+    randn(n)
+end
 ```
 
 ![](myplot.png)
