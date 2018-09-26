@@ -6,7 +6,6 @@ using Pkg
 pkg"add Plots"
 pkg"add Distributions"
 pkg"add OnlineStats"
-pkg"add CSV"
 pkg"add AverageShiftedHistograms"
 using InteractiveUtils
 ```
@@ -208,13 +207,6 @@ writedlm("temp.csv", x, ',')
 y = readdlm("temp.csv")
 ```
 
-- Delimited files -> read into a DataFrame
-  
-```julia;repl
-using CSV
-CSV.read("temp.csv", allowmissing = :none)
-```
-
 - (De)serialization
 
 ```julia;repl;
@@ -272,6 +264,31 @@ Int <: Number
 ```
 
 # Multiple Dispatch
+
+Here is a very naive implementation of a quantile finder based on Newton's method.  
+
+```julia; run;
+using Distributions
+
+function myquantile(d, q)
+    out = mean(d)
+    for i in 1:10
+        out -= (cdf(d, out) - q) / pdf(d, out)
+    end
+    out
+end
+```
+
+I have not told Julia anything about what `d` or `q` is, but when I provide arguments such 
+as `Distributions.Normal(0, 1)` and `0.5`, Julia will compile specialized code.
+
+```julia;repl;
+myquantile(Normal(0, 1), .5)
+myquantile(Gamma(5, 1), .7)
+myquantile(Beta(2, 4), .1)
+```
+
+**How would you do this in R?** You would need to rewrite this function for every distribution!  
 
 # Plotting
 
