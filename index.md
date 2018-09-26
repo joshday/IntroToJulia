@@ -293,6 +293,8 @@ png(p, "build/myplot.png")
 - [RCall.jl](https://github.com/JuliaInterop/RCall.jl)
 - [PyCall.jl](https://github.com/JuliaPy/PyCall.jl)
 
+**Demo in Jupyter Notebook**
+
 
 # Gotchas
 
