@@ -11,7 +11,7 @@ using InteractiveUtils
 ```
 
 ### Introduction to Julia
-
+\n\n\n\n\n\n\n
 #### Dr. Josh Day
 
 - GitHub: `@joshday`
@@ -73,7 +73,7 @@ using InteractiveUtils
 - Metaprogramming (macros)
 - Just-in-time (JIT) compilation using LLVM
 - Clean, familiar syntax
-- Most of Julia is written in Julia
+- Most of Julia is written in Julia!
 
 ### Multiple Dispatch
 
