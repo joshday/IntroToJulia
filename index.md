@@ -180,13 +180,39 @@ end;
 Thing.myfun(1)
 ```
 
+- To add a registered package, you can do:
+
+```julia
+using Pkg
+Pkg.add("CoolPackage")
+```
+
+```julia
+using Pkg
+pkg"add CoolPackage"
+```
+
+or use the package manager REPL mode: `] add Package`.
+
+Side note: characters before a string are a *string macro* which can treat the string in different
+ways.  In this case, `pkg"some command"` runs `some command` in Julia's package manager.
+
+- To load a package:
+    - `using CoolPackage`
+        - Load exported names, e.g. `exported_function`
+        - Unexported names accessed via `CoolPackage.thing`
+    - `import CoolPackage`
+        - Everything accessed via `CoolPackage.exported_function`
+
 
 ## How do I do X in Julia?
 
-1. `?X`
-2. Official docs
-3. Discourse/Slack
-4. Google
+1. `?X` (search the help)
+2. Official docs (search the docs)
+3. Discourse/Slack (ask question on slack or discourse)
+4. Google as last resort
+
+Historically Google has been particularly bad at finding Julia docs (top hits are for old versions).
 
 ## How should I write code?
 
