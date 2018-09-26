@@ -290,6 +290,9 @@ png(p, "build/myplot.png")
 
 # Using R or Python with Julia
 
+- [RCall.jl](https://github.com/JuliaInterop/RCall.jl)
+- [PyCall.jl](https://github.com/JuliaPy/PyCall.jl)
+
 
 # Gotchas
 
