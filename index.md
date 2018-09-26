@@ -292,3 +292,5 @@ png(p, "build/myplot.png")
 
 
 # Gotchas
+
+- Avoid global scope
